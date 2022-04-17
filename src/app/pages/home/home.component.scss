@@ -1,0 +1,38 @@
+.card-list{
+    margin: 100px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    
+    .card{
+        max-width: 200px;
+        border-radius: 5px;
+        padding: 20px;
+        height: 100px;
+        background-color: #fff;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+
+        p{
+            text-align: center;
+        }
+        .titulo{
+            font-size: 1.3rem;
+            font-weight: bold;
+        }
+
+        .descricao{
+            font-size: 0.9rem;
+        }
+
+        &:hover{
+            cursor: pointer;
+            transition: 0.2s ease-in-out;
+            transform: scale(1.1);
+        }
+    }
+}

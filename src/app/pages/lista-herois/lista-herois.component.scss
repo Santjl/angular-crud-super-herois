@@ -1,0 +1,36 @@
+.tabela{
+    border-radius: 5px;
+}
+.wrapper{
+    gap:50px
+}
+
+.card{
+    width: 200px;
+    border-radius: 5px;
+    padding: 20px;
+    height: 100px;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+
+    p{
+        text-align: center;
+    }
+    .nome-heroi{
+        font-size: 1.3rem;
+        font-weight: 500;
+    }
+
+    .nome{
+        font-size: 0.9rem;
+    }
+
+    &:hover{
+        cursor: pointer;
+        transition: 0.2s ease-in-out;
+    }
+    
+}

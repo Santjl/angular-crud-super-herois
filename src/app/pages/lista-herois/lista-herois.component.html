@@ -1,0 +1,11 @@
+<div *ngIf="vm$ | async as vm">
+    <div fxLayout="row wrap" class="wrapper">
+        <div *ngFor="let heroi of vm.herois">
+            <div class="card"> 
+                <p class="nome-heroi">{{heroi.nomeHeroi}}</p>
+                <p class="nome">({{ heroi.nome}})</p>
+                
+            </div>
+        </div>
+    </div>
+</div>

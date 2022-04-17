@@ -1,0 +1,12 @@
+<ng-container>
+    <div fxLayout="column" fxLayoutAlign="center center">
+        <p>Bem vindo ao Painel de Controle dos Super Heróis da cidade!</p>
+    </div>
+<div class="card-list">
+    <div *ngFor="let card of cards" class="card" (click)="navegarParaLista(card.function)">
+        <p class="titulo">{{card.titulo}}</p>
+        <p class="descricao">{{card.descricao}}</p>
+    </div>
+</div>
+</ng-container>
+
