@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { CRUDHeroisApi } from 'src/app/core/api/crud-herois.api';
 import { combineLatest } from 'rxjs';
 import { MatDialog } from '@angular/material/dialog';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-lista-herois',
@@ -17,7 +18,7 @@ export class ListaHeroisComponent implements OnInit {
 
   constructor(
     private facade: HeroisFacade,
-    private dialog: MatDialog
+    private router: Router
   ) { }
 
   ngOnInit(): void {
@@ -25,7 +26,7 @@ export class ListaHeroisComponent implements OnInit {
   }
 
   navegarParaInformacoes(heroiId: number){
-    
+    this.facade.selecionarHeroi(heroiId)
   }
 
 }

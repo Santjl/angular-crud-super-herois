@@ -1,1 +1,55 @@
-<p>informacoes-heroi works!</p>
+<div *ngIf="vm$ | async as vm">
+    <div class="botoes">
+    </div>
+  <div *ngIf="vm.heroi.data as heroi">
+    <div class="container">
+      <p class="titulo">Informações Pessoais do Herói</p>
+      <hr class="divider-type2"/>
+
+      <div class="informacao" fxLayout="row wrap">
+        <div class="informacoes-pessoais" fxLayout="column">
+          <div class="grupo" fxLayout="row">
+            <p class="nome">Nome de Herói:</p>
+            <p class="valor">{{ heroi.nomeHeroi }}</p>
+          </div>
+
+          <div class="grupo" fxLayout="row">
+            <p class="nome">Peso:</p>
+            <p class="valor">{{ heroi.peso }} kg</p>
+          </div>
+        </div>
+
+        <div class="informacoes-pessoais" fxLayout="column">
+          <div class="grupo" fxLayout="row">
+            <p class="nome">Nome verdadeiro:</p>
+            <p class="valor">{{ heroi.nome }}</p>
+          </div>
+          <div class="grupo" fxLayout="row">
+            <p class="nome">Altura:</p>
+            <p class="valor">{{ heroi.altura }} m</p>
+          </div>
+        </div>
+
+        <div class="informacoes-pessoais" fxLayout="column">
+          <div class="grupo" fxLayout="row">
+            <p class="nome">Número de regristro:</p>
+            <p class="valor">{{ heroi.id }}</p>
+          </div>
+          <div class="grupo" fxLayout="row">
+            <p class="nome">Data de nascimento:</p>
+            <p class="valor">{{ heroi.dataNascimento }}</p>
+          </div>
+        </div>
+    </div>
+    <hr class="divider-type1" />
+    <p class="titulo">Superpoderes registrados até o momento</p>
+      <hr class="divider-type2" />
+      <div class="superpoderes" fxLayout="row wrap">
+          <div *ngFor="let poder of heroi.superpoderes" class="superpoder">
+            <p class="nome">{{ poder.superpoder }}:</p>
+            <p class="descricao">{{ poder.descricao }}</p>
+          </div>
+      </div>
+    </div>
+  </div>
+</div>

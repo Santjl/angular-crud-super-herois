@@ -9,7 +9,7 @@
     width: 200px;
     border-radius: 5px;
     padding: 20px;
-    height: 100px;
+    min-height: 80px;
     background-color: #fff;
     display: flex;
     flex-direction: column;
@@ -29,8 +29,14 @@
     }
 
     &:hover{
+        background-color: rgb(255, 244, 234);
         cursor: pointer;
+        transform: scale(1.025);
         transition: 0.2s ease-in-out;
     }
     
+    .botao{
+        font-size: 0.7rem;
+        color: #c3c3c3;
+    }
 }
