@@ -1,6 +1,6 @@
 # AngularSuperHerois
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.1.2.
+Projeto feito para consumir a api CRUDSuperHerois. Verifique na pasta enviroment, se a baseUrl está equivalente à URL da API.
 
 ## Development server
 
