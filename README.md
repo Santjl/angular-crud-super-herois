@@ -1,6 +1,6 @@
 # AngularSuperHerois
 
-Projeto feito para consumir a api CRUDSuperHerois.
+Projeto feito para consumir a api CRUDSuperHerois. Verifique na pasta enviroment, se a baseUrl está equivalente à URL da API.
 
 ## Development server
 
