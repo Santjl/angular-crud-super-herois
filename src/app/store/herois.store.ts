@@ -31,11 +31,13 @@ export type HeroiSuperpoder = {
 export type HeroisState = {
   herois: Herois[];
   heroiSelecionado: Nullable<HeroiSuperpoder>;
+  superpoderes: Superpoder[];
 };
 
 const INITIAL_STATE: HeroisState = {
   herois: [],
   heroiSelecionado: null,
+  superpoderes: []
 };
 
 const HEROIS_STATE = 'herois_state';
@@ -59,6 +61,10 @@ export class HeroisStore {
   
   setHeroiSelecionado(heroiSelecionado: HeroiSuperpoder) {
       this.setState({ ...this.state, heroiSelecionado });
+  }
+
+  setSuperpoderes(superpoderes: Superpoder[]){
+    this.setState({...this.state, superpoderes});
   }
 
   private setState(newState: HeroisState) {

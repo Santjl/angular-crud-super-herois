@@ -1,11 +1,27 @@
 .tabela{
     border-radius: 5px;
 }
-.wrapper{
-    gap:50px
-}
 
+.flat-button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 10px;
+    font-size: 14px;
+    cursor: pointer;
+    background-color: #FA810F;
+    height: 50px;
+    color: #fff;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    max-width: 200px;
+    
+    &:hover{
+        background-color: rgb(253, 174, 99);
+    }
+  }
 .card{
+    justify-content: space-between;
     width: 200px;
     border-radius: 5px;
     padding: 20px;
@@ -14,7 +30,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-between;
+    margin: 50px;
 
     p{
         text-align: center;
@@ -35,7 +51,7 @@
         transition: 0.2s ease-in-out;
     }
     
-    .botao{
+    .ver-mais{
         font-size: 0.7rem;
         color: #c3c3c3;
     }

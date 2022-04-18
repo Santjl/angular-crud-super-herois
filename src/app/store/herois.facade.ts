@@ -1,5 +1,5 @@
 import { BehaviorSubject, switchMap, combineLatest, tap } from 'rxjs';
-import { HeroisStore } from './herois.store';
+import { Herois, HeroisStore } from './herois.store';
 import { Injectable } from "@angular/core";
 import { CRUDHeroisApi } from '../core/api/crud-herois.api';
 import { map } from 'rxjs';
@@ -14,17 +14,13 @@ export class HeroisFacade {
         this._store = value;
     }
 
-    herois$ = this.store.state$.pipe(map((state) => state.herois));
+    // herois$ = this.store.state$.pipe(map((state) => state.herois));
+    // superpoderes$ = this.store.state$.pipe(map((state) => state.superpoderes));
 
-    // filtroHeroi$ = combineLatest({
-    //     idHeroi: this.activatedRoute.paramMap.subscribe(params => {
+    triggerSuperpoderes$ = new BehaviorSubject({});
 
-    //         var id = params.get('id');
-      
-    //         this.facade.selecionarHeroi(id)
-      
-    //       })
-    //     });
+    triggerHerois$ = new BehaviorSubject({});
+
             
 
     selecionarHeroi(id: number) {
@@ -36,6 +32,19 @@ export class HeroisFacade {
       }
 
     idHeroi$ = new BehaviorSubject(0)
+
+    herois$ = this.triggerHerois$.pipe(
+        switchMap((trigger) => this.api.ObterHerois()),
+        tap((data) => {
+            if(data != [] ){
+                this.store.setHerois(data)
+            }
+        })
+    );
+
+    atualizarHerois(){
+        this.triggerHerois$.next({});
+    }
 
     private carregarHerois(){
         this.api.ObterHerois().subscribe({
@@ -53,10 +62,23 @@ export class HeroisFacade {
 
     heroiSelecionado$ = this.idHeroi$.pipe(
         switchMap((heroi) => 
-        this.api.ObterDetalhesHeroi(heroi)
+        this.api.obterDetalhesHeroi(heroi)
         ),
         tap((dado) => console.log(dado)),
         tap((dado) => this.store.setHeroiSelecionado(dado.data))
+    );
+
+    atualizarSuperpoderes(){
+        this.triggerSuperpoderes$.next({});
+    }
+
+    superpoderes$ = this.triggerSuperpoderes$.pipe(
+        switchMap((trigger) => this.api.obterSuperpoderes()),
+        tap((data) => {
+            if(data.data != [] || data.success == true ){
+                this.store.setSuperpoderes(data.data)
+            }
+        })
     );
 
     constructor(
@@ -65,6 +87,6 @@ export class HeroisFacade {
         private activatedRoute: ActivatedRoute,
         private router: Router
     ){
-        this.carregarHerois()
+        this.carregarHerois();
     }
 }

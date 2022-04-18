@@ -17,6 +17,10 @@ import { CadastroHeroiComponent } from './pages/cadastro-heroi/cadastro-heroi.co
 import { ListaHeroisComponent } from './pages/lista-herois/lista-herois.component';
 import { CRUDHeroisApi } from './core/api/crud-herois.api';
 import { InformacoesHeroiComponent } from './pages/informacoes-heroi/informacoes-heroi.component';
+import { NgxMaskModule } from 'ngx-mask';
+import { DialogComponent } from './components/dialog/dialog.component';
+import { AdicionarSuperpoderComponent } from './pages/cadastro-heroi/components/adicionar-superpoder/adicionar-superpoder.component';
+import { EditarHeroiComponent } from './pages/editar-heroi/editar-heroi.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +28,10 @@ import { InformacoesHeroiComponent } from './pages/informacoes-heroi/informacoes
     HomeComponent,
     CadastroHeroiComponent,
     ListaHeroisComponent,
-    InformacoesHeroiComponent
+    InformacoesHeroiComponent,
+    DialogComponent,
+    AdicionarSuperpoderComponent,
+    EditarHeroiComponent,
   ],
   imports: [
     BrowserModule,
@@ -33,6 +40,7 @@ import { InformacoesHeroiComponent } from './pages/informacoes-heroi/informacoes
     SharedModule,
     LayoutModule,
     HttpClientModule,
+    NgxMaskModule.forRoot()
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },

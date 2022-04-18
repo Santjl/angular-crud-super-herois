@@ -33,7 +33,9 @@ export class BaseApi {
     return this.http.put<T>(`${this.urlApiBase}${rota}`, entity);
   }
 
-  delete<T>(rota: string, id: number): Observable<T> {
-    return this.http.delete<T>(`${this.urlApiBase}${rota}/${id}`);
+  delete<T>(rota: string, params: HttpParams): Observable<T> {
+    return this.http.delete<T>(`${this.urlApiBase}${rota}`, {
+      params: params,
+    });
   }
 }

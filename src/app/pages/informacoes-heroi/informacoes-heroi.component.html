@@ -1,5 +1,11 @@
-<div *ngIf="vm$ | async as vm">
+<div *ngIf="vm$ | async as vm" class="page">
     <div class="botoes">
+      <div class="botao-edicao" (click)="navegarParaEdicao()">
+        Editar Informações do Herói
+      </div>
+      <div class="botao-excluir" (click)="excluirRegistroHeroi()">
+        Excluir Herói
+      </div>
     </div>
   <div *ngIf="vm.heroi.data as heroi">
     <div class="container">

@@ -29,4 +29,8 @@ export class ListaHeroisComponent implements OnInit {
     this.facade.selecionarHeroi(heroiId)
   }
 
+  navegarParaCadastroDeHerois(){
+    this.router.navigateByUrl('cadastro-heroi')
+  }
+
 }

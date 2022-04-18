@@ -11,6 +11,53 @@
   }
 }
 
+.botoes{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  .botao-excluir{
+    display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 200px;
+      padding: 0 10px;
+      font-size: 14px;
+      cursor: pointer;
+      background-color: #fff;
+  
+      height: 50px;
+      color: #FA810F;
+      border-radius: 5px;
+      margin-bottom: 20px;
+      
+      &:hover{
+        background-color: rgb(253, 174, 99);
+        color: #fff;
+      }
+  }
+  
+  .botao-edicao{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 200px;
+      padding: 0 10px;
+      font-size: 14px;
+      cursor: pointer;
+      background-color: #FA810F;
+      height: 50px;
+      color: #fff;
+      border-radius: 5px;
+      margin-bottom: 20px;
+      
+      &:hover{
+          background-color: rgb(253, 174, 99);
+      }
+    
+  }
+}
+
+
 .divider-type1 {
   border: solid 0.1px #c3c3c3;
   margin: 20px 0 20px 0;

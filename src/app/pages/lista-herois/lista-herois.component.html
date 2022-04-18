@@ -1,11 +1,18 @@
-<div *ngIf="vm$ | async as vm">
-    <div fxLayout="row wrap" class="wrapper">
-        <div *ngFor="let heroi of vm.herois">
-            <div class="card" (click)="navegarParaInformacoes(heroi.id)"> 
-                <p class="nome-heroi">{{heroi.nomeHeroi}}</p>
-                <p class="nome">({{ heroi.nome}})</p>
-                <p class="botao">(Clique para ver mais detalhes)</p>
+<ng-container>
+    <div *ngIf="vm$ | async as vm">
+        <div class="button" fxLayout="row" fxLayoutAlign="end">
+            <div class="flat-button" (click)="navegarParaCadastroDeHerois()">
+                Cadastrar novo herói
+            </div>
+        </div>
+        <div fxLayout="row wrap" class="wrapper">
+            <div *ngFor="let heroi of vm.herois">
+                <div class="card" (click)="navegarParaInformacoes(heroi.id)"> 
+                    <p class="nome-heroi">{{heroi.nomeHeroi}}</p>
+                    <p class="nome">({{ heroi.nome}})</p>
+                    <p class="ver-mais">(Clique para ver mais detalhes)</p>
+                </div>
             </div>
         </div>
     </div>
-</div>
+</ng-container>

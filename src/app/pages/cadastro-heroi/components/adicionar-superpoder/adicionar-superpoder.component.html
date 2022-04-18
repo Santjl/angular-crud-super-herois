@@ -1,0 +1,25 @@
+<div class="container">
+    <p>Cadastro de um novo superpoder.</p>
+    <hr class="primeiro-hr"/>
+    <form [formGroup]="formularioSuperpoder">
+        <div fxLayout="column">
+            <mat-form-field appearance="outline">
+                <mat-label>Nome do Superpoder</mat-label>
+                <input matInput formControlName="superpoder" autocomplete="off"/>
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+                <mat-label>Descrição do Superpoder</mat-label>
+                <input matInput formControlName="descricao" autocomplete="off"/>
+            </mat-form-field>
+        </div>
+        <hr  class="segundo-hr"/>
+        <div class="botoes">
+            <button mat-flat-button type="submit" (click)="adicionarSuperpoder()" >
+                Cadastrar
+            </button>
+            <button mat-flat-button mat-dialog-close>
+                Cancelar
+            </button>
+        </div>
+    </form>
+</div>

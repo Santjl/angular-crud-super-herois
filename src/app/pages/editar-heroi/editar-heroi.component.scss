@@ -1,0 +1,137 @@
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
+
+.container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+  
+    .titulo {
+      font-weight: 500;
+      font-size: 1.2rem;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+  
+    .subtitulo{
+      padding-bottom: 20px;
+    }
+  
+  }
+  
+  .label{
+    font-size: 1rem;
+  }
+  
+  hr{
+      border: solid 0.1px #c3c3c3;
+      margin: 20px 0 20px 0;
+  }
+  
+  .selecao-superpoder {
+  display: flex;
+  align-items: baseline;
+  align-items: center;
+  }
+  
+  .superpoderes{
+    align-items: center;
+    justify-content: center;
+  
+    .descricao-excluir{
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+    
+    }
+  }
+  .excluir{
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #8b8b8b;
+    p{
+      font-size: .8rem;
+    }
+    img{
+      height: 20px;
+    }
+  }
+  .superpoder {
+    border-radius: 5px;
+    padding: 10px;
+    background-color: rgb(255, 244, 234);
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
+    align-items: center;
+  
+    .nome{
+        font-weight: 500;
+    }
+  }
+  
+  .mat-flat-button{
+    background-color: #FA810F;
+    height: 50px;
+    color: #fff;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    
+    &:hover{
+        background-color: rgb(253, 174, 99);
+    }
+  }
+  
+  .flat-button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 10px;
+    font-size: 14px;
+    cursor: pointer;
+    background-color: #FA810F;
+    height: 50px;
+    color: #fff;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    max-width: 200px;
+    
+    &:hover{
+        background-color: rgb(253, 174, 99);
+    }
+  }
+  mat-form-field{
+   min-width: 60%;
+  }
+  
+  
+  
+  .botoes{
+    display:flex;
+    flex-direction: row;
+    gap:20px;
+    justify-content: space-between;
+    margin-left: 50px;
+  }
+  
+  ::ng-deep .mat-form-field-appearance-outline .mat-form-field-outline {
+    color: #FA810F;
+    // opacity: 1!important;
+  }
+  ::ng-deep .mat-form-field-appearance-outline.mat-focused .mat-form-field-outline-thick {
+    color: #FA810F;
+  }
+  
+  ::ng-deep .mat-form-field.mat-focused .mat-form-field-label {
+    color: #000;
+  }
+  
+  ::ng-deep .mat-form-field-can-float.mat-form-field-should-float .mat-form-field-label {
+    color: #000
+  }

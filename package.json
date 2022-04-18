@@ -22,6 +22,7 @@
     "@angular/platform-browser-dynamic": "~13.1.0",
     "@angular/router": "~13.1.0",
     "@ngneat/until-destroy": "^9.0.2",
+    "ngx-mask": "^13.1.9",
     "roboto-fontface": "^0.10.0",
     "rxjs": "~7.4.0",
     "tslib": "^2.3.0",

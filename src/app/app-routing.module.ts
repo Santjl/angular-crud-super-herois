@@ -1,3 +1,4 @@
+import { EditarHeroiComponent } from './pages/editar-heroi/editar-heroi.component';
 
 import { HomeComponent } from './pages/home/home.component';
 import { NgModule } from '@angular/core';
@@ -27,6 +28,14 @@ const routes: Routes = [
   {
     path: 'informacao-heroi/:id',
     component: InformacoesHeroiComponent
+  },
+  {
+    path: 'cadastro-heroi',
+    component: CadastroHeroiComponent
+  },
+  {
+    path: 'informacao-heroi/:id/editar-heroi',
+    component: EditarHeroiComponent
   }
 ];
 

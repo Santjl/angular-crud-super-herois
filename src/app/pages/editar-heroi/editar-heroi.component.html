@@ -1,0 +1,133 @@
+<div *ngIf="vm$ | async as vm" class="container">
+    <div *ngIf="vm.heroiSelecionado.data as heroiSelecionado">
+        <div>
+          <p class="titulo">Edição do herói: {{heroiSelecionado.nomeHeroi}}</p>
+        </div>
+        <hr />
+        <form [formGroup]="formularioHeroi">
+          <p class="subtitulo">Informações do Herói</p>
+          <div
+            fxLayout="column wrap"
+            class="linha-formulario"
+            fxLayoutAlign=""
+            fxLayoutGap="20px"
+          >
+            <div
+              fxLayout="row wrap"
+              class="conteudo"
+              fxLayoutAlign="space-between center"
+              fxLayoutGap="20px"
+            >
+              <div fxLayout="column" fxFlex>
+                <mat-form-field class="" appearance="outline">
+                  <mat-label class="label">Nome Verdadeiro</mat-label>
+                  <input matInput formControlName="nome" autocomplete="off" [ngModel]="heroiSelecionado.nome"/>
+                  <mat-error *ngIf="hasError('nome', 'required')">Por favor, informe o nome verdadeiro do herói.
+                </mat-error>
+                </mat-form-field>
+              </div>
+      
+              <div fxLayout="column" fxFlex>
+                <mat-form-field class="" appearance="outline">
+                  <mat-label class="label">Nome de Herói</mat-label>
+                  <input matInput [ngModel]="heroiSelecionado.nomeHeroi" formControlName="nomeHeroi" autocomplete="off" />
+                  <mat-error *ngIf="hasError('nomeHeroi', 'required')">Por favor, informe o nome de herói.
+                </mat-error>
+                </mat-form-field>
+              </div>
+            </div>
+            <div
+              fxLayout="row wrap"
+              class="conteudo"
+              fxLayoutAlign="space-between center"
+              fxLayoutGap="20px"
+            >
+              <div fxLayout="column" fxFlex>
+                <mat-form-field class="" appearance="outline">
+                  <mat-label class="label">Data de Nascimento</mat-label>
+                  <input
+                    matInput
+                    autocomplete="off"
+                    formControlName="dataNascimento"
+                    mask="00/00/0000"
+                    [ngModel]="heroiSelecionado.dataNascimento"
+                  />
+                  <mat-error *ngIf="hasError('dataNascimento', 'required')">Por favor, informe a data de nascimento do herói.
+                </mat-error>
+                </mat-form-field>
+              </div>
+              <div fxLayout="column" fxFlex>
+                <mat-form-field class="" appearance="outline">
+                  <mat-label class="label">Altura (m)</mat-label>
+                  <input matInput type="number" [ngModel]="heroiSelecionado.altura" tautocomplete="off" formControlName="altura" />
+                  <mat-error *ngIf="hasError('altura', 'required')">Por favor, informe a altura do herói.
+                </mat-error>
+                </mat-form-field>
+              </div>
+              <div fxLayout="column" fxFlex>
+                <mat-form-field class="" appearance="outline">
+                  <mat-label class="label" >Peso (kg)</mat-label>
+                  <input matInput type="number" [ngModel]="heroiSelecionado.peso" matInput autocomplete="off" formControlName="peso" />
+                  <mat-error *ngIf="hasError('peso', 'required')">Por favor, informe o do herói.
+                </mat-error>
+                </mat-form-field>
+              </div>
+            </div>
+          </div>
+          <hr />
+          <div class="superpoderes">
+            <p class="subtitulo">Superpoderes</p>
+            <p>Selecione um superpoder existente ou crie um novo:</p>
+      
+            <div
+              *ngIf="vm$ | async as vm"
+              fxLayout="row wrap "
+              class="selecao-superpoder"
+            >
+              <div></div>
+              <mat-form-field appearance="outline" disabled="true">
+                <mat-select formControlName="superpoder">
+                  <mat-option
+                    *ngFor="let superpoder of vm.superpoderes.data"
+                    [value]="superpoder"
+                  >
+                    {{ superpoder.superpoder }}
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
+              <div class="botoes">
+                <div class="flat-button" (click)="adicionarSuperpoder()">
+                  Associar poder ao herói
+                </div>
+                <div class="flat-button" 
+                (click)="abrirCadastroSuperpoder()"
+                >
+                  Cadastrar Novo Poder
+                </div>
+              </div>
+            </div>
+            <div class="superpoder" *ngFor="let superpoder of superpoderesHeroi">
+              <div class="nome">
+                <p class="nome">{{ superpoder.superpoder }}:</p>
+              </div>
+      
+              <p class="descricao">
+                {{ superpoder.descricao }}
+              </p>
+              <div class="excluir" (click)="retirarSuperpoder(superpoder.id)">
+                <p>(Clique para retirar o superpoder)</p>
+              </div>
+            </div>
+          </div>
+          <hr />
+          <div
+            type="submit"
+            class="flat-button"
+            (click)="cadastrarHeroiSuperpoderes()"
+          >
+            Atualizar
+        </div>
+        </form>
+    </div>
+  </div>
+  
