@@ -7,7 +7,6 @@
         class="menu-item"
         routerLinkActive="active"
         (click)="navegarParaHome()"
-        matRipple
       >
         Home
       </a>
@@ -15,24 +14,16 @@
         class="menu-item"
         routerLinkActive="active"
         (click)="navegarParaListaHerois()"
-        matRipple
       >
         Heróis
       </a>
+      <a
+        class="menu-item"
+        routerLinkActive="active"
+        (click)="navegarParaCadastro()"
+      >
+        Cadastro 
+      </a>
     </div>
-  </div>
-  <!-- MOBILE MENU -->
-  <div class="mobile-menu" fxHide.gt-sm fxLayout="row">
-    <div class="toolbar-separator mat-blue-700-bg"></div>
-
-    <button mat-button [matMenuTriggerFor]="userMenu" class="user-button">
-      <div fxLayout="row" fxLayoutAlign="center center">
-        <mat-icon class="s-24">menu</mat-icon>
-      </div>
-    </button>
-
-    <mat-menu #userMenu="matMenu" [overlapTrigger]="false">
-      <button routerLink="/" mat-menu-item>Home</button>
-    </mat-menu>
   </div>
 </mat-toolbar>

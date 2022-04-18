@@ -17,6 +17,10 @@ export class HeaderComponent implements OnInit {
   navegarParaListaHerois(){
     this.router.navigateByUrl('lista-heroi');
   }
+  
+  navegarParaCadastro(){
+    this.router.navigateByUrl('cadastro-heroi');
+  }
   ngOnInit(): void {
   }
 
