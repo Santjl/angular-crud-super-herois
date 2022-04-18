@@ -125,7 +125,7 @@ export class EditarHeroiComponent implements OnInit {
               if (data.success === true){
                 this.abrirDialogo('Sucesso!', 'Herói atualizado com sucesso.');
                 this.facade.atualizarHerois();
-                this.router.navigateByUrl('lista-heroi');
+                this.router.navigate(['informacao-heroi', this.id]);
               }
             },
             error: (e) => {
