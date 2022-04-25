@@ -64,7 +64,6 @@ export class CadastroHeroiComponent implements OnInit {
   });
 
   cadastrarHeroiSuperpoderes(){
-    console.log('entrou aqui')
     var nome = this.formularioHeroi.get('nome')?.value;
     var nomeHeroi = this.formularioHeroi.get('nomeHeroi')?.value;
     var dataNascimento = this.formularioHeroi.get('dataNascimento')?.value;
