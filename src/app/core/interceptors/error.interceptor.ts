@@ -41,28 +41,4 @@ export class ErrorInterceptor implements HttpInterceptor {
       })
     );
   }
-
-  /**
-   * Handle 403 HTTP error
-   */
-//   private handle401Error(
-//     request: HttpRequest<any>,
-//     next: HttpHandler,
-//     error: HttpErrorResponse
-//   ): Observable<any> {
-//     if (this.autenticacaoStore.isLoggedIn) {
-//       this._snackBar.open(
-//         'Atenção! Você precisa se autenticar novamente no sistema.',
-//         'Entendi',
-//         {
-//           horizontalPosition: 'center',
-//           verticalPosition: 'top',
-//           panelClass: 'snackbar-default',
-//         }
-//       );
-
-//       this.autenticacaoStore.logout();
-//     }
-//     return throwError(() => error);
-//   }
 }

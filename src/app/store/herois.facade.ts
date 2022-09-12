@@ -36,7 +36,7 @@ export class HeroisFacade {
     herois$ = this.triggerHerois$.pipe(
         switchMap((trigger) => this.api.ObterHerois()),
         tap((data) => {
-            if(data != [] ){
+            if(data.length != 0 ){
                 this.store.setHerois(data)
             }
         })
@@ -49,7 +49,7 @@ export class HeroisFacade {
     private carregarHerois(){
         this.api.ObterHerois().subscribe({
             next: (data) => {
-                if(data != [] || data != null ){
+                if(data.length != 0 || data != null ){
                     this.store.setHerois(data)
                 }
             }
@@ -75,7 +75,7 @@ export class HeroisFacade {
     superpoderes$ = this.triggerSuperpoderes$.pipe(
         switchMap((trigger) => this.api.obterSuperpoderes()),
         tap((data) => {
-            if(data.data != [] || data.success == true ){
+            if(data.data.length != 0 || data.success == true ){
                 this.store.setSuperpoderes(data.data)
             }
         })
